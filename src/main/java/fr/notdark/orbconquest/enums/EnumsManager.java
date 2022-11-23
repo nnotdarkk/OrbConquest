@@ -2,7 +2,10 @@ package fr.notdark.orbconquest.enums;
 
 import org.bukkit.ChatColor;
 
-public class EnumsConvertor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class EnumsManager {
 
     public String convertEnumToString(Object object) {
         return object.toString();
@@ -24,14 +27,14 @@ public class EnumsConvertor {
         return null;
     }
 
-    public String convertPowerToCategory(GamePowers power){
-        if(power.equals(GamePowers.Fireball) || power.equals(GamePowers.FlareAccel) || power.equals(GamePowers.HellAura)) return "Feu";
-        if(power.equals(GamePowers.ParalyzeShot) || power.equals(GamePowers.LightningBolt) || power.equals(GamePowers.ThunderCharge)) return "Foudre";
-        if(power.equals(GamePowers.IceFreeze) || power.equals(GamePowers.IceAura) || power.equals(GamePowers.SnowBall)) return "Glace";
-        if(power.equals(GamePowers.AerialSpeed) || power.equals(GamePowers.Mist) || power.equals(GamePowers.WindCutter)) return "Air";
-        if(power.equals(GamePowers.PoisonSynthesis) || power.equals(GamePowers.PouisonBall) || power.equals(GamePowers.PoisonBreath)) return "Poison";
-        if(power.equals(GamePowers.FlashBomb) || power.equals(GamePowers.Heal) || power.equals(GamePowers.HealingZone)) return "Lumière";
-        if(power.equals(GamePowers.Zombie) || power.equals(GamePowers.Skeleton) || power.equals(GamePowers.IronGolem) || power.equals(GamePowers.Horse) || power.equals(GamePowers.Rabbit) || power.equals(GamePowers.Sheep)) return "Invocation";
+    public String convertPowerToCategory(GameElements power){
+        if(power.equals(GameElements.Fireball) || power.equals(GameElements.FlareAccel) || power.equals(GameElements.HellAura)) return "Feu";
+        if(power.equals(GameElements.ParalyzeShot) || power.equals(GameElements.LightningBolt) || power.equals(GameElements.ThunderCharge)) return "Foudre";
+        if(power.equals(GameElements.IceFreeze) || power.equals(GameElements.IceAura) || power.equals(GameElements.SnowBall)) return "Glace";
+        if(power.equals(GameElements.AerialSpeed) || power.equals(GameElements.Mist) || power.equals(GameElements.WindCutter)) return "Air";
+        if(power.equals(GameElements.PoisonSynthesis) || power.equals(GameElements.PouisonBall) || power.equals(GameElements.PoisonBreath)) return "Poison";
+        if(power.equals(GameElements.FlashBomb) || power.equals(GameElements.Heal) || power.equals(GameElements.HealingZone)) return "Lumière";
+        if(power.equals(GameElements.Zombie) || power.equals(GameElements.Skeleton) || power.equals(GameElements.IronGolem) || power.equals(GameElements.Horse) || power.equals(GameElements.Rabbit) || power.equals(GameElements.Sheep)) return "Invocation";
         return null;
     }
 
@@ -43,7 +46,23 @@ public class EnumsConvertor {
         if(skill.equals(GameSkills.Boost) || skill.equals(GameSkills.ElementalTrap) || skill.equals(GameSkills.Alarm) || skill.equals(GameSkills.MPBalancer)) return GameClasses.Support;
         if(skill.equals(GameSkills.BombArrow) || skill.equals(GameSkills.Jump) || skill.equals(GameSkills.ElementalArrow) || skill.equals(GameSkills.HomingArrow)) return GameClasses.Archer;
         if(skill.equals(GameSkills.ShadowStrike) || skill.equals(GameSkills.Bleeding) || skill.equals(GameSkills.Hide)) return GameClasses.Assassin;
-        if(skill.equals(GameSkills.SoulStealer) || skill.equals(GameSkills.SoulStealer2) || skill.equals(GameSkills.SoulStealer3) || skill.equals(GameSkills.SoulStealer4) || skill.equals(GameSkills.SoulStealer5)) return GameClasses.Assassin;
         return null;
+    }
+
+    public List<GameSkills> getClassicSkills(){
+        List<GameSkills> skills = new ArrayList<>();
+        skills.add(GameSkills.Meditation);
+        skills.add(GameSkills.Detection);
+        skills.add(GameSkills.SteadfastWarrior);
+        skills.add(GameSkills.SuperAccel);
+        return skills;
+    }
+
+    public List<GameSkills> getUniqueSkills(){
+        List<GameSkills> skills = new ArrayList<>();
+        skills.add(GameSkills.DeadOrAlive);
+        skills.add(GameSkills.HeavenlyRoad);
+        skills.add(GameSkills.SoulEater);
+        return skills;
     }
 }

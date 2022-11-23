@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.archer;public class BombArrow {
+package fr.notdark.orbconquest.skills.skills.classes.archer;
+
+public class BombArrow {
 }

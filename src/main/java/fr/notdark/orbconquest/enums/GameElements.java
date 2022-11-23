@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.enums;
 
-public enum GamePowers {
+public enum GameElements {
 
     Fireball,
     FlareAccel,

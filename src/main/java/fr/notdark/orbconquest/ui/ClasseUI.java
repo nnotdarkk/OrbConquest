@@ -1,4 +1,7 @@
 package fr.notdark.orbconquest.ui;
 
-public class ChoiceUI {
+import org.bukkit.event.Listener;
+
+public class ClasseUI implements Listener {
+
 }

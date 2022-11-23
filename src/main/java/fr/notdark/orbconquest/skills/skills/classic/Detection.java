@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classic;public class Detection {
+package fr.notdark.orbconquest.skills.skills.classic;
+
+public class Detection {
 }

@@ -1,4 +1,4 @@
-package fr.notdark.orbconquest.manager;
+package fr.notdark.orbconquest.managers;
 
 import fr.notdark.orbconquest.enums.GameStates;
 import org.bukkit.Material;
@@ -6,13 +6,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import fr.notdark.orbconquest.tools.ItemBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameManager {
 
     private GameStates gameState;
 
-    private List<Player> players;
+    private List<Player> players = new ArrayList<>();
 
     private int seconds;
     private int minutes;

@@ -1,4 +1,4 @@
-package fr.notdark_.nakimeparty.tools;
+package fr.notdark.orbconquest.tools;
 
 import net.minecraft.server.v1_8_R3.*;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;

@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.tank;public class HolyProtection {
+package fr.notdark.orbconquest.skills.skills.classes.tank;
+
+public class HolyProtection {
 }

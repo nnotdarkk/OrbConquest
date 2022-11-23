@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.ui;public class ConfigUI {
+package fr.notdark.orbconquest.ui;
+
+public class ConfigUI {
 }

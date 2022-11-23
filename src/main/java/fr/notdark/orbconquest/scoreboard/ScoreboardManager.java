@@ -1,7 +1,6 @@
-package fr.notdark_.nakimeparty.scoreboard;
+package fr.notdark.orbconquest.scoreboard;
 
-
-import fr.lunestia.spacerush.Main;
+import fr.notdark.orbconquest.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -41,9 +40,8 @@ public class ScoreboardManager {
 
         glowingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
         {
-            String ip = colorIpAt();
             for (PersonalScoreboard scoreboard : scoreboards.values())
-                Main.getInstance().getExecutorMonoThread().execute(() -> scoreboard.setLines(ip));
+                Main.getInstance().getExecutorMonoThread().execute(scoreboard::setLines);
         }, 80, 80, TimeUnit.MILLISECONDS);
 
         reloadingTask = Main.getInstance().getScheduledExecutorService().scheduleAtFixedRate(() ->
@@ -76,39 +74,4 @@ public class ScoreboardManager {
             scoreboards.get(player.getUniqueId()).reloadData();
         }
     }
-
-    private String colorIpAt() {
-        String ip = "mc.lunestia.net";
-
-        if (cooldown > 0) {
-            cooldown--;
-            return ChatColor.WHITE + ip;
-        }
-
-        StringBuilder formattedIp = new StringBuilder();
-
-        if (ipCharIndex > 0) {
-            formattedIp.append(ip.substring(0, ipCharIndex - 1));
-            formattedIp.append(ChatColor.BLUE).append(ip.substring(ipCharIndex - 1, ipCharIndex));
-        } else {
-            formattedIp.append(ip.substring(0, ipCharIndex));
-        }
-
-        formattedIp.append(ChatColor.BLUE).append(ip.charAt(ipCharIndex));
-
-        if (ipCharIndex + 1 < ip.length()) {
-            formattedIp.append(ChatColor.BLUE).append(ip.charAt(ipCharIndex + 1));
-
-            if (ipCharIndex + 2 < ip.length())
-                formattedIp.append(ChatColor.WHITE).append(ip.substring(ipCharIndex + 2));
-
-            ipCharIndex++;
-        } else {
-            ipCharIndex = 0;
-            cooldown = 50;
-        }
-
-        return ChatColor.WHITE + formattedIp.toString();
-    }
-
 }

@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.enums;
 
-public enum Classes {
+public enum GameClasses {
 
     Guerrier,
     Tank,

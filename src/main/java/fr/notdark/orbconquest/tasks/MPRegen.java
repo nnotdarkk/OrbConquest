@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.tasks;public class MPRegen {
+package fr.notdark.orbconquest.tasks;
+
+public class MPRegen {
 }

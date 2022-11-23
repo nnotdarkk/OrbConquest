@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.archer;public class HomingArrow {
+package fr.notdark.orbconquest.skills.skills.classes.archer;
+
+public class HomingArrow {
 }

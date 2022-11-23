@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.mage;public class MPDrainer {
+package fr.notdark.orbconquest.skills.skills.classes.mage;
+
+public class MPDrainer {
 }

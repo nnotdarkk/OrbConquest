@@ -1,4 +1,4 @@
-package fr.lunestia.api.utils;
+package fr.notdark.orbconquest.tools;
 
 import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;

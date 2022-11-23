@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classic;public class SpeedfastWarrior {
+package fr.notdark.orbconquest.skills.skills.classic;
+
+public class SpeedfastWarrior {
 }

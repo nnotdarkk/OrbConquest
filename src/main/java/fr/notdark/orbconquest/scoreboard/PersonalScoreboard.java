@@ -1,8 +1,11 @@
-package fr.notdark_.nakimeparty.scoreboard;
+package fr.notdark.orbconquest.scoreboard;
 
-import fr.notdark_.nakimeparty.Main;
-import fr.notdark_.nakimeparty.enums.GameState;
-import fr.notdark_.nakimeparty.manager.GameManager;
+import fr.notdark.orbconquest.Main;
+import fr.notdark.orbconquest.config.ConfigManager;
+import fr.notdark.orbconquest.config.user.UserManager;
+import fr.notdark.orbconquest.enums.EnumsManager;
+import fr.notdark.orbconquest.enums.GameStates;
+import fr.notdark.orbconquest.managers.GameManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -29,8 +32,8 @@ public class PersonalScoreboard {
     private final UUID uuid;
     private final ObjectiveSign objectiveSign;
 
-    private GameManager gameManager;
-    private Main main = Main.getInstance();
+    private GameStates gameState;
+    private Integer players;
 
     PersonalScoreboard(Player player){
         this.player = player;
@@ -42,33 +45,42 @@ public class PersonalScoreboard {
     }
 
     public void reloadData(){
-        this.gameManager = new GameManager(main);
+        Main main = Main.getInstance();
+        GameManager gameManager = main.getGameManager();
+        EnumsManager enumsManager = new EnumsManager();
+        UserManager userManager = new UserManager(main, player);
+        ConfigManager configManager = new ConfigManager(main);
+
+        gameState = gameManager.getGameState();
+        players = Bukkit.getOnlinePlayers().size();
     }
 
-    public void setLines(String ip){
-        objectiveSign.setDisplayName("§9SpaceRush");
-        if(gameManager.isState(GameState.GAME)){
+    public void setLines(){
+        objectiveSign.setDisplayName("§5§lOrb §7§lConquest");
+        if(gameState == GameStates.GAME){
             objectiveSign.setLine(0, "§1");
-            objectiveSign.setLine(1, "§8▪ §7Equipe: " + gameManager.getTeamString(player));
+            objectiveSign.setLine(1, " §7» §cJoueurs: " + players);
             objectiveSign.setLine(2, "§2");
-            objectiveSign.setLine(3, "§8▪ §7Demons restants: §c" + gameManager + "§7/§c100");
-            objectiveSign.setLine(4, "§8▪ §7Slayers restants: §a" + gameManager. + "§7/§a100");
-            objectiveSign.setLine(5, "§3");
-            objectiveSign.setLine(6, "§8▪ §7Serveur: §a" + DNSpigotAPI.getInstance().getProcessName());
-            objectiveSign.setLine(7, "§8▪ §7Connectés: §a" + connected);
-            objectiveSign.setLine(8, "§4");
-            objectiveSign.setLine(9, ip);
+            objectiveSign.setLine(3, "§5§lTemps");
+            objectiveSign.setLine(4, "§7» §cFin de partie:§7 " + "10s");
+            objectiveSign.setLine(5, "§7» §cRestitution:§7 " + "10s");
+            objectiveSign.setLine(6, "§7» §cDécompte:§7 " + "10s");
+            objectiveSign.setLine(7, "§3");
+            objectiveSign.setLine(8, "§5§lMon équipe");
+            objectiveSign.setLine(9, "§7» §cPoints:§6§l ");
+            objectiveSign.setLine(10, "§7» §cOrbe:§f§l " + "↓" + " §7(§8" + "28" + " blocs§7)" );
+            objectiveSign.setLine(11, "§4");
+            objectiveSign.setLine(12, "§7» §cClasse: §7");
+            objectiveSign.setLine(13, "§7» §cÉlément: §7");
 
             objectiveSign.updateLines();
             return;
         }
         objectiveSign.setLine(0, "§1");
-        objectiveSign.setLine(1, "§8▪ §7Staut: §9En attente");
+        objectiveSign.setLine(1, " §7» §cJoueurs: §7" + players);
         objectiveSign.setLine(2, "§2");
-        objectiveSign.setLine(3, "§8▪ §7Serveur: §a" + DNSpigotAPI.getInstance().getProcessName());
-        objectiveSign.setLine(4, "§8▪ §7Connectés: §a" + connected);
-        objectiveSign.setLine(5, "§3");
-        objectiveSign.setLine(6, ip);
+        objectiveSign.setLine(3, " §7» §cVotre équipe: ");
+        objectiveSign.setLine(4, " §7» §cHost: §a");
 
         objectiveSign.updateLines();
     }

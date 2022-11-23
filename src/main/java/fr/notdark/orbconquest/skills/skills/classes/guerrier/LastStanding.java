@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.guerrier;public class LastStanding {
+package fr.notdark.orbconquest.skills.skills.classes.guerrier;
+
+public class LastStanding {
 }

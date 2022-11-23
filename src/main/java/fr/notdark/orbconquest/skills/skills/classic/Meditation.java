@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classic;public class Meditation {
+package fr.notdark.orbconquest.skills.skills.classic;
+
+public class Meditation {
 }

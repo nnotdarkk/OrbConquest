@@ -1,4 +1,4 @@
-package fr.notdark.orbconquest.task;
+package fr.notdark.orbconquest.tasks;
 
 import fr.notdark.orbconquest.Main;
 import org.bukkit.scheduler.BukkitRunnable;

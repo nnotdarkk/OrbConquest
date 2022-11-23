@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.elements.invocation;public class Sheep {
+package fr.notdark.orbconquest.skills.elements.invocation;
+
+public class Sheep {
 }

@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.support;public class ElementalTrap {
+package fr.notdark.orbconquest.skills.skills.classes.support;
+
+public class ElementalTrap {
 }

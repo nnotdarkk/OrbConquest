@@ -1,4 +1,4 @@
-package fr.notdark_.nakimeparty.scoreboard;
+package fr.notdark.orbconquest.scoreboard;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

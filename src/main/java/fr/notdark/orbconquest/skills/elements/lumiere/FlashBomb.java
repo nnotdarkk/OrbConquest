@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.elements.lumiere;public class FlashBomb {
+package fr.notdark.orbconquest.skills.elements.lumiere;
+
+public class FlashBomb {
 }

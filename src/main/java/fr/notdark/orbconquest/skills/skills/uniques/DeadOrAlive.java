@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.uniques;public class DeadOrAlive {
+package fr.notdark.orbconquest.skills.skills.uniques;
+
+public class DeadOrAlive {
 }

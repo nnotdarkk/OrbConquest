@@ -1,4 +1,4 @@
-package fr.notdark_.nakimeparty.scoreboard;
+package fr.notdark.orbconquest.scoreboard;
 
 import net.minecraft.server.v1_8_R3.IScoreboardCriteria;
 import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardDisplayObjective;

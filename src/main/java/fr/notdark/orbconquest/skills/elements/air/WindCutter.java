@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.elements.air;public class WindCutter {
+package fr.notdark.orbconquest.skills.elements.air;
+
+public class WindCutter {
 }

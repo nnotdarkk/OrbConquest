@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.elements.poison;public class PoisonSynthesis {
+package fr.notdark.orbconquest.skills.elements.poison;
+
+public class PoisonSynthesis {
 }

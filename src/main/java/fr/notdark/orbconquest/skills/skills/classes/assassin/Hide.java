@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.assassin;public class Hide {
+package fr.notdark.orbconquest.skills.skills.classes.assassin;
+
+public class Hide {
 }

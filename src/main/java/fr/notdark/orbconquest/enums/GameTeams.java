@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.enums;
 
-public enum Teams {
+public enum GameTeams {
 
     Rouge,
     Orange,

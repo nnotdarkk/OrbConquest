@@ -1,2 +1,4 @@
-package fr.notdark.orbconquest.skills.skills.classes.assassin;public class Critical {
+package fr.notdark.orbconquest.skills.skills.classes.assassin;
+
+public class Critical {
 }

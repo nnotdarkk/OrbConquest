@@ -1,4 +1,4 @@
-package fr.notdark_.nakimeparty.scoreboard;
+package fr.notdark.orbconquest.scoreboard;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
