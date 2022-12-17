@@ -1,5 +1,7 @@
 package fr.notdark.orbconquest.tools;
 
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
 import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -10,8 +12,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ItemBuilder {
     private ItemStack is;
@@ -103,6 +107,22 @@ public class ItemBuilder {
     @SuppressWarnings("deprecation")
     public ItemBuilder setWoolColor(DyeColor color) {
         this.is.setDurability(color.getData());
+        return this;
+    }
+
+    public ItemBuilder setCustomHeadData(String texture){
+        ItemMeta im = is.getItemMeta();
+        GameProfile profile = new GameProfile(UUID.randomUUID(), "");
+        profile.getProperties().put("textures", new Property("textures", texture));
+        Field profileField;
+        try {
+            profileField = im.getClass().getDeclaredField("profile");
+            profileField.setAccessible(true);
+            profileField.set(im, profile);
+        } catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+            e.printStackTrace();
+        }
+        is.setItemMeta(im);
         return this;
     }
 

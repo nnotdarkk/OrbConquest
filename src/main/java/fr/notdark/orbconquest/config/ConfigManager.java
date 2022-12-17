@@ -22,17 +22,19 @@ public class ConfigManager {
 
         YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
 
-        f.set("temps-partie", 0);
-        f.set("temps-prep", 0);
-        f.set("temps-calcul-point", 0);
-        f.set("points-garde", 0);
-        f.set("points-perte", 0);
-        f.set("players-per-team", 0);
-        f.set("players-points-start", 0);
-
+        f.set("temps-partie", 5);
+        f.set("temps-prep", 5);
+        f.set("temps-calcul-point", 5);
+        f.set("temps-restitution-orbe", 5);
+        f.set("temps-info-chat", 5);
+        f.set("points-notre-orbe", 2);
+        f.set("points-orbe-adverse", 3);
+        f.set("rayon-de-spawn", 250);
+        f.set("players-per-team", 5);
+        f.set("players-points-start", 10);
+        f.set("cycle-jour-nuit", 5);
         f.set("creation-mode", GameCreationMode.Choosen.toString());
-        f.set("host", "null");
-        //TODO locations
+        f.set("host", null);
 
         try {
             f.save(fileManager.getFile("config"));
@@ -45,15 +47,19 @@ public class ConfigManager {
         fileManager.removeFile("config");
     }
 
-    public int getTempsPartie() {
+    public int getInt(String path) {
         YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("temps-partie");
+        return f.getInt(path);
     }
 
-    public void setTempsPartie(int tempsPartie) {
+    public String getString(String path) {
         YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("temps-partie", tempsPartie);
+        return f.getString(path);
+    }
 
+    public void setInt(String path, int value) {
+        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
+        f.set(path, value);
         try {
             f.save(fileManager.getFile("config"));
         } catch (IOException e) {
@@ -61,127 +67,9 @@ public class ConfigManager {
         }
     }
 
-    public int getTempsPrep() {
+    public void setString(String path, String value) {
         YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("temps-prep");
-    }
-
-    public void setTempsPrep(int tempsPrep) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("temps-prep", tempsPrep);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getTempsCalculPoint() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("temps-calcul-point");
-    }
-
-    public void setTempsCalculPoint(int tempsCalculPoint) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("temps-calcul-point", tempsCalculPoint);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getPointsGarde() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("points-garde");
-    }
-
-    public void setPointsGarde(int pointsGarde) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("points-garde", pointsGarde);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getPointsPerte() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("points-perte");
-    }
-
-    public void setPointsPerte(int pointsPerte) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("points-perte", pointsPerte);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getPlayersPerTeam() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("players-per-team");
-    }
-
-    public void setPlayersPerTeam(int playersPerTeam) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("players-per-team", playersPerTeam);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getPlayersPointsStart() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getInt("players-points-start");
-    }
-
-    public void setPlayersPointsStart(int playersPointsStart) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("players-points-start", playersPointsStart);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public GameCreationMode getCreationTeams() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return GameCreationMode.valueOf(f.getString("creation-teams"));
-    }
-
-    public void setCreationTeams(GameCreationMode creationTeams) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("creation-teams", creationTeams);
-
-        try {
-            f.save(fileManager.getFile("config"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String getHost() {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        return f.getString("host");
-    }
-
-    public void setHost(String host) {
-        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("config"));
-        f.set("host", host);
-
+        f.set(path, value);
         try {
             f.save(fileManager.getFile("config"));
         } catch (IOException e) {

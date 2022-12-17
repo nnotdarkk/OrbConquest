@@ -65,4 +65,11 @@ public class EnumsManager {
         skills.add(GameSkills.SoulEater);
         return skills;
     }
+
+    public GameCreationMode getCreationMode(String mode){
+        if(mode.equals("Choosen")) return GameCreationMode.Choosen;
+        if(mode.equals("Random")) return GameCreationMode.Random;
+        if(mode.equals("Captains")) return GameCreationMode.Captains;
+        return null;
+    }
 }

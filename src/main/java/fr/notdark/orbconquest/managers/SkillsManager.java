@@ -2,7 +2,6 @@ package fr.notdark.orbconquest.managers;
 
 import fr.notdark.orbconquest.enums.GameElements;
 import fr.notdark.orbconquest.enums.GameSkills;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -21,6 +20,7 @@ public class SkillsManager {
     private static List<Player> thunderedByThunderCharge = new ArrayList<>();
     private static List<Player> isInIceAura = new ArrayList<>();
     private static HashMap<Player, BukkitTask> iceAuraRunnable = new HashMap<>();
+    private static List<Player> isInMist = new ArrayList<>();
 
 
     public void initPlayer(Player player){
@@ -111,9 +111,7 @@ public class SkillsManager {
 
     public boolean isInNoSkillsOrElements(Player player) {
         if (noSkillsOrElements.containsKey(player)) {
-            if (noSkillsOrElements.get(player) > System.currentTimeMillis()) {
-                return true;
-            }
+            return noSkillsOrElements.get(player) > System.currentTimeMillis();
         }
         return false;
     }
@@ -228,6 +226,22 @@ public class SkillsManager {
 
     public void removeIceAuraRunnable(Player player) {
         iceAuraRunnable.remove(player);
+    }
+
+    /*
+    * Mist
+     */
+
+    public void addMist(Player player) {
+        isInMist.add(player);
+    }
+
+    public void removeMist(Player player) {
+        isInMist.remove(player);
+    }
+
+    public boolean isMist(Player player) {
+        return isInMist.contains(player);
     }
 
 }

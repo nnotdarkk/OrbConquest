@@ -34,6 +34,8 @@ public class PersonalScoreboard {
 
     private GameStates gameState;
     private Integer players;
+    private String host;
+    private String preTeam;
 
     PersonalScoreboard(Player player){
         this.player = player;
@@ -47,19 +49,17 @@ public class PersonalScoreboard {
     public void reloadData(){
         Main main = Main.getInstance();
         GameManager gameManager = main.getGameManager();
-        EnumsManager enumsManager = new EnumsManager();
-        UserManager userManager = new UserManager(main, player);
-        ConfigManager configManager = new ConfigManager(main);
-
         gameState = gameManager.getGameState();
-        players = Bukkit.getOnlinePlayers().size();
+        players = gameManager.getPlayers().size();
+        host = gameManager.getHost();
+        preTeam = gameManager.getPreGameTeam(player);
     }
 
     public void setLines(){
-        objectiveSign.setDisplayName("§5§lOrb §7§lConquest");
+        objectiveSign.setDisplayName("§5§lOrb§7§lConquest");
         if(gameState == GameStates.GAME){
             objectiveSign.setLine(0, "§1");
-            objectiveSign.setLine(1, " §7» §cJoueurs: " + players);
+            objectiveSign.setLine(1, " §7» §cJoueurs: §7" + players);
             objectiveSign.setLine(2, "§2");
             objectiveSign.setLine(3, "§5§lTemps");
             objectiveSign.setLine(4, "§7» §cFin de partie:§7 " + "10s");
@@ -68,7 +68,7 @@ public class PersonalScoreboard {
             objectiveSign.setLine(7, "§3");
             objectiveSign.setLine(8, "§5§lMon équipe");
             objectiveSign.setLine(9, "§7» §cPoints:§6§l ");
-            objectiveSign.setLine(10, "§7» §cOrbe:§f§l " + "↓" + " §7(§8" + "28" + " blocs§7)" );
+            objectiveSign.setLine(10, "§7» §cOrbe:§f§l " + "↓" + " §7(§8" + "28" + " blocs§7)");
             objectiveSign.setLine(11, "§4");
             objectiveSign.setLine(12, "§7» §cClasse: §7");
             objectiveSign.setLine(13, "§7» §cÉlément: §7");
@@ -79,8 +79,8 @@ public class PersonalScoreboard {
         objectiveSign.setLine(0, "§1");
         objectiveSign.setLine(1, " §7» §cJoueurs: §7" + players);
         objectiveSign.setLine(2, "§2");
-        objectiveSign.setLine(3, " §7» §cVotre équipe: ");
-        objectiveSign.setLine(4, " §7» §cHost: §a");
+        objectiveSign.setLine(3, " §7» §cVotre équipe: " + preTeam);
+        objectiveSign.setLine(4, " §7» §cHost: " + host);
 
         objectiveSign.updateLines();
     }

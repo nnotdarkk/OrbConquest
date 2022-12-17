@@ -38,7 +38,11 @@ public class SnowBall implements Listener {
     @EventHandler
     public void event(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Snowball && skillsManager.isProjectile(e.getDamager().getUniqueId()) && e.getEntity() instanceof Player) {
-
+            if(e.getEntity() instanceof Player){
+                //TODO reduire agi de 10
+                skillsManager.addNoSkillsOrElements((Player) e.getEntity(), 5);
+            }
+            skillsManager.removeProjectile(e.getDamager().getUniqueId());
         }
     }
 

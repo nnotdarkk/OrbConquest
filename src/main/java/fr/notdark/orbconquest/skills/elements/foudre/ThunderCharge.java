@@ -26,7 +26,7 @@ public class ThunderCharge implements Listener {
     }
 
     public String getName() {
-        return "&b&lThunder Charge";
+        return "§b§lThunder Charge";
     }
 
     @EventHandler

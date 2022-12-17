@@ -48,16 +48,27 @@ public class CryoStasis implements Listener {
             Location base = player.getLocation();
 
             setIce(base.add(1, 0, 0));
+            base.add(-1, 0, 0);
             setIce(base.add(-1, 0, 0));
+            base.add(1, 0, 0);
             setIce(base.add(0, 0, 1));
+            base.add(0, 0, -1);
             setIce(base.add(0, 0, -1));
+            base.add(0, 0, 1);
 
             setIce(base.add(1, 1, 0));
+            base.add(-1, -1, 0);
             setIce(base.add(-1, 1, 0));
+            base.add(1, -1, 0);
             setIce(base.add(0, 1, 1));
+            base.add(0, -1, -1);
             setIce(base.add(0, 1, -1));
+            base.add(0, -1, 1);
 
             setIce(base.add(0, 2, 0));
+            base.add(0, -2, 0);
+            setIce(base.add(0, -1, 0));
+            base.add(0, 1, 0);
 
             Bukkit.getScheduler().runTaskLater(main, new Runnable() {
                 @Override

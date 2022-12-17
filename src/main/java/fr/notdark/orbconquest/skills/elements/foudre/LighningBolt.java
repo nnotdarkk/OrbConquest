@@ -38,4 +38,6 @@ public class LighningBolt implements Listener {
             }
         }
     }
+
+    //TODO foudre 1 coeur
 }

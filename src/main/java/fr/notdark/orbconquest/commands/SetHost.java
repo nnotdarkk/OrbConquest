@@ -35,14 +35,25 @@ public class SetHost extends Command {
         }
 
         ConfigManager configManager = main.getConfigManager();
-        Player b = Bukkit.getPlayer(configManager.getHost());
+        Player b = null;
+        if(configManager.getString("host") != null){
+            b = Bukkit.getPlayer(configManager.getString("host"));
+        }
         if(b != null) {
+            if(b.getName().equals(target.getName())) {
+                sender.sendMessage("§cCe joueur est déjà l'hôte !");
+                return true;
+            }
+
             b.sendMessage("§cVous n'êtes plus l'hôte de la partie !");
             b.getInventory().setItem(8, null);
+            b.getInventory().setItem(7, null);
         }
-        configManager.setHost(target.getDisplayName());
-        Player a = Bukkit.getServer().getPlayer(configManager.getHost());
+
+        configManager.setString("host", target.getDisplayName());
+        Player a = Bukkit.getServer().getPlayer(configManager.getString("host"));
         a.getInventory().setItem(8, main.getGameManager().getOptionsHostItem());
+        a.getInventory().setItem(7, main.getGameManager().getLaunchGameItem());
         a.sendMessage("§aVous êtes maintenant l'hôte de la partie !");
         sender.sendMessage("§aLe nouveau host est maintenant: " + target.getDisplayName());
         return false;

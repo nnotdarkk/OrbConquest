@@ -19,12 +19,11 @@ import org.bukkit.util.Vector;
 
 public class FlareAccel implements Listener {
 
-    private final Main main;
-    private SkillsManager skillsManager;
+
+    private final SkillsManager skillsManager;
     private boolean flareAccel = false;
 
-    public FlareAccel(Main main) {
-        this.main = main;
+    public FlareAccel() {
         this.skillsManager = new SkillsManager();
     }
 
@@ -98,12 +97,8 @@ public class FlareAccel implements Listener {
                     if(p == e.getPlayer()){
                         return;
                     }
-                    /*if(skillsManager.isFlamedByFlareAccel(p)){
-                        return;
-                    }*/
+
                     p.setFireTicks(120);
-                    /*skillsManager.addFlamedByFlareAccel(p);
-                    Bukkit.getScheduler().runTaskLater(Main.getInstance(), () -> skillsManager.removeFlamedByFlareAccel(p), 2 * 20L);*/
                 }
             }
         }

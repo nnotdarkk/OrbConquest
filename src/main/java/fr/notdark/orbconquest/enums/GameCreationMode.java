@@ -5,5 +5,4 @@ public enum GameCreationMode {
     Choosen,
     Random,
     Captains,
-
 }

@@ -2,17 +2,13 @@ package fr.notdark.orbconquest.skills.elements.feu;
 
 import fr.notdark.orbconquest.Main;
 import fr.notdark.orbconquest.enums.GameElements;
-import fr.notdark.orbconquest.enums.GameSkills;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
-import fr.notdark.orbconquest.events.customs.handlers.SkillsEventHandler;
 import fr.notdark.orbconquest.managers.SkillsManager;
-import net.minecraft.server.v1_8_R3.Explosion;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Explosive;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.SmallFireball;
 import org.bukkit.event.EventHandler;
