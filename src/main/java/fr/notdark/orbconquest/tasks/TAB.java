@@ -21,6 +21,7 @@ public class TAB extends BukkitRunnable {
         for (Player player : Bukkit.getOnlinePlayers()) {
             switch (main.getGameManager().getGameState()) {
                 case LOBBY:
+                case STARTING:
                     title.sendTabTitle(player, "§5§lOrb§7§lConquest\n ", "\n§7Ping: §6" + ((CraftPlayer)player).getHandle().ping + " §8▏ §7TPS: §e" + new Lag().getTPS() + "\n§7(Dev by Karam)");
                     break;
                 case GAME:

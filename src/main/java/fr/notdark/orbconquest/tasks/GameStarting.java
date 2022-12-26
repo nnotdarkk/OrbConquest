@@ -1,6 +1,7 @@
 package fr.notdark.orbconquest.tasks;
 
 import fr.notdark.orbconquest.Main;
+import fr.notdark.orbconquest.config.user.UserManager;
 import fr.notdark.orbconquest.enums.GameSelectMenu;
 import fr.notdark.orbconquest.enums.GameStates;
 import fr.notdark.orbconquest.tools.Title;
@@ -56,7 +57,9 @@ public class GameStarting extends BukkitRunnable {
                 p.getInventory().clear();
                 main.getGameManager().setSelectMenu(p, GameSelectMenu.Classe);
                 SelectingMenus selectingMenus = new SelectingMenus(main);
-                selectingMenus.runTaskTimer(main, 0, 10);
+                selectingMenus.runTaskTimer(main, 0, 5);
+                UserManager um = new UserManager(main, p);
+                um.setupPlayer();
             }
             main.getGameManager().setGameState(GameStates.GAME);
             cancel();

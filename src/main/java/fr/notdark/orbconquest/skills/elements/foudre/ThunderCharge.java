@@ -1,7 +1,7 @@
 package fr.notdark.orbconquest.skills.elements.foudre;
 
 import fr.notdark.orbconquest.Main;
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.managers.SkillsManager;
 import fr.notdark.orbconquest.tools.Cuboid;
@@ -39,7 +39,7 @@ public class ThunderCharge implements Listener {
 
         if(e.getItem().getItemMeta().getDisplayName().equals(getName())){
 
-            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameElements.ThunderCharge);
+            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameSorts.ThunderCharge);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
             if(!player.isOnGround()){

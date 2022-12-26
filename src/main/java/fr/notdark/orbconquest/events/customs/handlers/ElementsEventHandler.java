@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.events.customs.handlers;
 
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
@@ -12,20 +12,20 @@ public class ElementsEventHandler extends Event implements Cancellable {
 
     private boolean cancelled;
     private Player player;
-    private GameElements elements;
+    private GameSorts sorts;
 
-    public ElementsEventHandler(Player player, GameElements skill) {
+    public ElementsEventHandler(Player player, GameSorts sorts) {
         cancelled = false;
         this.player = player;
-        this.elements = elements;
+        this.sorts = sorts;
     }
 
     public Player getPlayer() {
         return player;
     }
 
-    public GameElements getSkill() {
-        return elements;
+    public GameSorts getSkill() {
+        return sorts;
     }
 
     @Override

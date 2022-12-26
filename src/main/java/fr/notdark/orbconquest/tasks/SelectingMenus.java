@@ -15,7 +15,10 @@ public class SelectingMenus extends BukkitRunnable {
     @Override
     public void run() {
         for(Player player : main.getGameManager().getPlayersInSelectMenu()){
-            player.openInventory(main.getGameManager().getInventoryFromSelectMenu(player));
+            String menu = player.getOpenInventory().getTitle();
+            if(!(main.getGameManager().getSelectMenuNames().contains(menu))){
+                player.openInventory(main.getGameManager().getInventoryFromSelectMenu(player));
+            }
         }
     }
 }

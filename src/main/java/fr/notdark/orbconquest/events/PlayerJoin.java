@@ -1,15 +1,11 @@
 package fr.notdark.orbconquest.events;
 
 import fr.notdark.orbconquest.Main;
-import fr.notdark.orbconquest.config.user.UserManager;
 import fr.notdark.orbconquest.enums.GameStates;
 import fr.notdark.orbconquest.managers.SkillsManager;
-import fr.notdark.orbconquest.tasks.Lag;
 import fr.notdark.orbconquest.tools.NametagImpl;
-import fr.notdark.orbconquest.tools.Title;
-import net.minecraft.server.v1_8_R3.MinecraftServer;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,6 +31,7 @@ public class PlayerJoin implements Listener, NametagImpl {
         player.setFireTicks(0);
         player.getInventory().clear();
         player.getInventory().setArmorContents(null);
+        player.setGameMode(GameMode.SURVIVAL);
         player.teleport(Bukkit.getWorld("world").getSpawnLocation());
 
         if(main.getConfigManager().getString("host") != null){
@@ -50,7 +47,7 @@ public class PlayerJoin implements Listener, NametagImpl {
         }
 
         setNameTag(player, "preGame", "§7", null);
-        main.getGameManager().initPreGameTeam(player);
+        main.getGameManager().initPlayer(player);
         main.getGameManager().initSelectMenu(player);
         main.getScoreboardManager().onLogin(player);
     }

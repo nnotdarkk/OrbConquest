@@ -1,7 +1,7 @@
 package fr.notdark.orbconquest.skills.elements.feu;
 
 import fr.notdark.orbconquest.Main;
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.managers.SkillsManager;
 import fr.notdark.orbconquest.tools.Cuboid;
@@ -51,7 +51,7 @@ public class FlareAccel implements Listener {
                 return;
             }
 
-            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameElements.FlareAccel);
+            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameSorts.FlareAccel);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
             Location base = player.getLocation();

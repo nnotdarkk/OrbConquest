@@ -1,7 +1,7 @@
 package fr.notdark.orbconquest.skills.elements.feu;
 
 import fr.notdark.orbconquest.Main;
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.managers.SkillsManager;
 import org.bukkit.Bukkit;
@@ -36,17 +36,17 @@ public class FireBall implements Listener {
         SkillsManager skillsManager = new SkillsManager();
 
         if(e.getItem().getItemMeta().getDisplayName().equals(getName())){
-            if(skillsManager.isInElementsCooldown(e.getPlayer(), GameElements.Fireball)){
-                e.getPlayer().sendMessage("§cVous devez attendre " + skillsManager.secondsLeftElementsCooldown(e.getPlayer(), GameElements.Fireball) +"s avant de pouvoir utiliser cette compétence !");
+            if(skillsManager.isInElementsCooldown(e.getPlayer(), GameSorts.Fireball)){
+                e.getPlayer().sendMessage("§cVous devez attendre " + skillsManager.secondsLeftElementsCooldown(e.getPlayer(), GameSorts.Fireball) +"s avant de pouvoir utiliser cette compétence !");
                 return;
             }
 
-            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(e.getPlayer(), GameElements.Fireball);
+            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(e.getPlayer(), GameSorts.Fireball);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
             SmallFireball fire = e.getPlayer().launchProjectile(SmallFireball.class);
             fire.setBounce(false);
-            skillsManager.addElementsCooldown(e.getPlayer(), GameElements.Fireball, 10);
+            skillsManager.addElementsCooldown(e.getPlayer(), GameSorts.Fireball, 10);
         }
     }
 

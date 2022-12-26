@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.skills.elements.foudre;
 
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.tools.Cuboid;
 import org.bukkit.Bukkit;
@@ -23,7 +23,7 @@ public class LighningBolt implements Listener {
 
         if(e.getItem().getItemMeta().getDisplayName().equals(getName())){
 
-            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(e.getPlayer(), GameElements.LightningBolt);
+            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(e.getPlayer(), GameSorts.LightningBolt);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
             Cuboid cuboid = new Cuboid(e.getPlayer().getLocation().add(10, 10, 10), e.getPlayer().getLocation().add(-10, -10, -10));

@@ -1,7 +1,7 @@
 package fr.notdark.orbconquest.skills.elements.feu;
 
 import fr.notdark.orbconquest.Main;
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.tools.Cuboid;
 import org.bukkit.Bukkit;
@@ -32,7 +32,7 @@ public class HellAura implements Listener {
         Player player = e.getPlayer();
 
         if(e.getItem().getItemMeta().getDisplayName().equals(getName())){
-            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameElements.HellAura);
+            ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameSorts.HellAura);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
             Location loc = e.getPlayer().getLocation().add(0, 1, 0);

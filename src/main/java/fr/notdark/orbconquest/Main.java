@@ -43,8 +43,6 @@ public class Main extends JavaPlugin {
     private ScheduledExecutorService scheduledExecutorService;
 
     @Getter
-    private UserManager userManager;
-    @Getter
     private TeamManager teamManager;
     @Getter
     private ConfigManager configManager;
@@ -61,7 +59,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        (userManager = new UserManager(this)).setupFile();
+        new UserManager(this).setupFile();
         (teamManager = new TeamManager(this)).setupFile();
         (configManager = new ConfigManager(this)).setupFile();
         (gameManager = new GameManager(this)).setGameState(GameStates.LOBBY);
@@ -95,7 +93,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        userManager.clearFile();
+        new UserManager(this).clearFile();
         teamManager.clearFile();
         configManager.clearFile();
     }

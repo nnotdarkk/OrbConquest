@@ -243,26 +243,36 @@ public class HostInventoryClick implements Listener {
     private void goNext(){
         String string = main.getConfigManager().getString("creation-mode");
         GameCreationMode gcm = main.getEnumsManager().getCreationMode(string);
+        main.getServer().getConsoleSender().sendMessage(string);
+        main.getServer().getConsoleSender().sendMessage(gcm.toString());
         switch (gcm){
             case Choosen:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Random.toString());
+                main.getServer().getConsoleSender().sendMessage("n1");
             case Random:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Captains.toString());
+                main.getServer().getConsoleSender().sendMessage("n2");
             case Captains:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Choosen.toString());
+                main.getServer().getConsoleSender().sendMessage("n3");
         }
     }
 
     private void goPrevious(){
         String string = main.getConfigManager().getString("creation-mode");
         GameCreationMode gcm = main.getEnumsManager().getCreationMode(string);
+        main.getServer().getConsoleSender().sendMessage(string);
+        main.getServer().getConsoleSender().sendMessage(gcm.toString());
         switch (gcm){
             case Choosen:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Captains.toString());
+                main.getServer().getConsoleSender().sendMessage("p1");
             case Random:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Choosen.toString());
+                main.getServer().getConsoleSender().sendMessage("p2");
             case Captains:
                 main.getConfigManager().setString("creation-mode", GameCreationMode.Random.toString());
+                main.getServer().getConsoleSender().sendMessage("p3");
         }
     }
 }

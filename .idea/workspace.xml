@@ -5,46 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c39dcba9-c110-4b36-a289-be4371aaf0ba" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/config/ClassesManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameSelectMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/ChoiceInventoryClick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/HostInventoryClick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/PlayerAsyncChat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/ParticleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/Lag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/SelectingMenus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/TAB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tools/NametagImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameSorts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/commands/SetHost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/commands/SetHost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/config/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/config/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/config/user/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/config/user/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/EnumsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/EnumsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameCreationMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameCreationMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/HostInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/HostInteract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/enums/GameStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/ChoiceInventoryClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/ChoiceInventoryClick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/HostInventoryClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/HostInventoryClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/PlayerJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/ElementsEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/ElementsEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/SkillsEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/SkillsEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/handlers/ElementsEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/events/customs/handlers/ElementsEventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/ParticleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/ParticleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/SkillsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/managers/SkillsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/scoreboard/PersonalScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/scoreboard/PersonalScoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/SkillsRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/SkillsRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/AerialSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/AerialSpeed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/Mist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/Mist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/WindCutter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/air/WindCutter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/FireBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/FireBall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/FlareAccel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/FlareAccel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/HellAura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/feu/HellAura.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/LighningBolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/LighningBolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/ParalyzeShot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/ParalyzeShot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/ThunderCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/foudre/ThunderCharge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/glace/CryoStasis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/glace/CryoStasis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/glace/SnowBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/skills/elements/glace/SnowBall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/GameStarting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/GameStarting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tools/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tools/ItemBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ClasseUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ChoiceUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ConfigUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ConfigUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/SelectingMenus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/SelectingMenus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/TAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/tasks/TAB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ChoiceUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/notdark/orbconquest/ui/ChoiceUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -156,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669223360650</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1671288774324</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671288774324</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

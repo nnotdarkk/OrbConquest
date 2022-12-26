@@ -1,6 +1,6 @@
 package fr.notdark.orbconquest.managers;
 
-import fr.notdark.orbconquest.enums.GameElements;
+import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.enums.GameSkills;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
@@ -9,7 +9,7 @@ import java.util.*;
 
 public class SkillsManager {
 
-    private static Map<Player, Map<GameElements, Long>> powersCooldown = new HashMap<>();
+    private static Map<Player, Map<GameSorts, Long>> powersCooldown = new HashMap<>();
     private static Map<Player, Map<GameSkills, Long>> skillsCooldown = new HashMap<>();
     private static Map<Player, Long> noSkillsOrElements = new HashMap<>();
     private static List<UUID> projectiles = new ArrayList<>();
@@ -43,11 +43,11 @@ public class SkillsManager {
     * Elements
      */
 
-    public void addElementsCooldown(Player player, GameElements gamePowers, int cooldown){
+    public void addElementsCooldown(Player player, GameSorts gamePowers, int cooldown){
         powersCooldown.get(player).put(gamePowers, System.currentTimeMillis() + (cooldown * 1000L));
     }
 
-    public boolean isInElementsCooldown(Player player, GameElements gamePowers) {
+    public boolean isInElementsCooldown(Player player, GameSorts gamePowers) {
         if (powersCooldown.get(player).containsKey(gamePowers)) {
             if (powersCooldown.get(player).get(gamePowers) > System.currentTimeMillis()) {
                 return true;
@@ -56,11 +56,11 @@ public class SkillsManager {
         return false;
     }
 
-    public int secondsLeftElementsCooldown(Player player, GameElements gamePowers){
+    public int secondsLeftElementsCooldown(Player player, GameSorts gamePowers){
         return (int) ((powersCooldown.get(player).get(gamePowers) - System.currentTimeMillis()) / 1000L);
     }
 
-    public void removeElementsCooldown(Player player, GameElements gamePowers){
+    public void removeElementsCooldown(Player player, GameSorts gamePowers){
         powersCooldown.get(player).remove(gamePowers);
     }
 

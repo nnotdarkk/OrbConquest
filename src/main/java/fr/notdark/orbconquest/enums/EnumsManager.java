@@ -27,14 +27,14 @@ public class EnumsManager {
         return null;
     }
 
-    public String convertPowerToCategory(GameElements power){
-        if(power.equals(GameElements.Fireball) || power.equals(GameElements.FlareAccel) || power.equals(GameElements.HellAura)) return "Feu";
-        if(power.equals(GameElements.ParalyzeShot) || power.equals(GameElements.LightningBolt) || power.equals(GameElements.ThunderCharge)) return "Foudre";
-        if(power.equals(GameElements.IceFreeze) || power.equals(GameElements.IceAura) || power.equals(GameElements.SnowBall)) return "Glace";
-        if(power.equals(GameElements.AerialSpeed) || power.equals(GameElements.Mist) || power.equals(GameElements.WindCutter)) return "Air";
-        if(power.equals(GameElements.PoisonSynthesis) || power.equals(GameElements.PouisonBall) || power.equals(GameElements.PoisonBreath)) return "Poison";
-        if(power.equals(GameElements.FlashBomb) || power.equals(GameElements.Heal) || power.equals(GameElements.HealingZone)) return "Lumière";
-        if(power.equals(GameElements.Zombie) || power.equals(GameElements.Skeleton) || power.equals(GameElements.IronGolem) || power.equals(GameElements.Horse) || power.equals(GameElements.Rabbit) || power.equals(GameElements.Sheep)) return "Invocation";
+    public GameElements convertSortToElement(GameSorts sort){
+        if(sort.equals(GameSorts.Fireball) || sort.equals(GameSorts.FlareAccel) || sort.equals(GameSorts.HellAura)) return GameElements.Feu;
+        if(sort.equals(GameSorts.ParalyzeShot) || sort.equals(GameSorts.LightningBolt) || sort.equals(GameSorts.ThunderCharge)) return GameElements.Foudre;
+        if(sort.equals(GameSorts.IceFreeze) || sort.equals(GameSorts.IceAura) || sort.equals(GameSorts.SnowBall)) return GameElements.Glace;
+        if(sort.equals(GameSorts.AerialSpeed) || sort.equals(GameSorts.Mist) || sort.equals(GameSorts.WindCutter)) return GameElements.Air;
+        if(sort.equals(GameSorts.PoisonSynthesis) || sort.equals(GameSorts.PouisonBall) || sort.equals(GameSorts.PoisonBreath)) return GameElements.Poison;
+        if(sort.equals(GameSorts.FlashBomb) || sort.equals(GameSorts.Heal) || sort.equals(GameSorts.HealingZone)) return GameElements.Lumiere;
+        if(sort.equals(GameSorts.Zombie) || sort.equals(GameSorts.Skeleton) || sort.equals(GameSorts.IronGolem) || sort.equals(GameSorts.Horse) || sort.equals(GameSorts.Rabbit) || sort.equals(GameSorts.Sheep)) return GameElements.Invocation;
         return null;
     }
 
