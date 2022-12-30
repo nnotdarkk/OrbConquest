@@ -9,6 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
+import java.util.Locale;
+
 public class ChoiceInventoryClick implements Listener {
 
     private final Main main;
@@ -138,9 +140,28 @@ public class ChoiceInventoryClick implements Listener {
             player.closeInventory();
             e.setCancelled(true);
         }
+
+        if(e.getInventory().getTitle().equals("Choix des éléments")){
+            switch (e.getSlot()){
+                case 21:
+
+            }
+        }
     }
 
-    public void checkPointsStats(Player player){
+    public void checkPointsElements(Player player){
+        UserManager um = new UserManager(main, player);
+        String classe = um.getClasse().toString().toLowerCase(Locale.ROOT);
+        int i = main.getGameManager().getPlayerUsedElementsPointsStart(player);
+        int a = main.getClassesManager().getInt(classe + ".elementsMax");
+
+        if(i >= a) {
+            main.getGameManager().setSelectMenu(player, GameSelectMenu.Sorts);
+            player.closeInventory();
+        }
+    }
+
+    private void checkPointsStats(Player player){
         int i = main.getConfigManager().getInt("players-points-start");
         int a = main.getGameManager().getPlayerUserPointsStart(player);
 

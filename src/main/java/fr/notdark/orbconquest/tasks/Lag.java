@@ -6,8 +6,7 @@ public class Lag implements Runnable {
   public long[] TICKS= new long[600];
   public long LAST_TICK= 0L;
  
-  public double getTPS()
-  {
+  public double getTPS() {
     return getTPS(100);
   }
  
@@ -20,16 +19,6 @@ public class Lag implements Runnable {
     long elapsed = System.currentTimeMillis() - TICKS[target];
  
     return ticks / (elapsed / 1000.0D);
-  }
- 
-  public long getElapsed(int tickID)
-  {
-    if (TICK_COUNT- tickID >= TICKS.length)
-    {
-    }
- 
-    long time = TICKS[(tickID % TICKS.length)];
-    return System.currentTimeMillis() - time;
   }
  
   public void run()

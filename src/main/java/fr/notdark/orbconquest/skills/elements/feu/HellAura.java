@@ -4,6 +4,7 @@ import fr.notdark.orbconquest.Main;
 import fr.notdark.orbconquest.enums.GameSorts;
 import fr.notdark.orbconquest.events.customs.handlers.ElementsEventHandler;
 import fr.notdark.orbconquest.tools.Cuboid;
+import net.minecraft.server.v1_8_R3.Packet;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -35,21 +36,10 @@ public class HellAura implements Listener {
             ElementsEventHandler elementsEventHandler = new ElementsEventHandler(player, GameSorts.HellAura);
             Bukkit.getPluginManager().callEvent(elementsEventHandler);
 
-            Location loc = e.getPlayer().getLocation().add(0, 1, 0);
-            for (double i = 0; i <= Math.PI; i += Math.PI / 15) {
-                double radius = Math.sin(i) * 10;
-                double y = Math.cos(i) * 10;
-                for (double a = 0; a < Math.PI * 2; a+= Math.PI / 15) {
-                    double x = Math.cos(a) * radius;
-                    double z = Math.sin(a) * radius;
-                    loc.add(x, y, z);
-                    Object packet = main.getParticles().FLAME().packet(true, loc);
-                    main.getParticles().sendPacket(loc, 30D, packet);
-                    loc.subtract(x, y, z);
-                }
-            }
+            Location loc = e.getPlayer().getLocation();
+            main.getParticleManager().spawnCircle(loc, (Packet) main.getParticles().FLAME().packet(true, loc));
 
-            Cuboid cuboid = new Cuboid(player.getLocation().add(10, 10, 10), player.getLocation().add(-10, -10, -10));
+            Cuboid cuboid = new Cuboid(loc.add(10, 10, 10), loc.add(-10, -10, -10));
             for(Player p : Bukkit.getOnlinePlayers()){
                 if(cuboid.contains(p.getLocation())){
                     if(p != player){

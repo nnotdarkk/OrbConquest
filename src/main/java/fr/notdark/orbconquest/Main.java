@@ -13,6 +13,7 @@ import fr.notdark.orbconquest.enums.GameStates;
 import fr.notdark.orbconquest.events.*;
 import fr.notdark.orbconquest.events.customs.ElementsEvent;
 import fr.notdark.orbconquest.events.customs.SkillsEvent;
+import fr.notdark.orbconquest.managers.ParticleManager;
 import fr.notdark.orbconquest.scoreboard.ScoreboardManager;
 import fr.notdark.orbconquest.managers.GameManager;
 import fr.notdark.orbconquest.skills.SkillsRegister;
@@ -54,6 +55,8 @@ public class Main extends JavaPlugin {
     private EnumsManager enumsManager;
     @Getter
     private ClassesManager classesManager;
+    @Getter
+    private ParticleManager particleManager;
 
     @Override
     public void onEnable() {
@@ -65,6 +68,7 @@ public class Main extends JavaPlugin {
         (gameManager = new GameManager(this)).setGameState(GameStates.LOBBY);
         enumsManager = new EnumsManager();
         (classesManager = new ClassesManager(this)).setupFile();
+        particleManager = new ParticleManager(this);
 
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);

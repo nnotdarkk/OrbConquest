@@ -12,7 +12,9 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
- 
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+
 public class Cuboid implements Iterable<Block>, Cloneable, ConfigurationSerializable {
     
     /**
@@ -589,7 +591,29 @@ public class Cuboid implements Iterable<Block>, Cloneable, ConfigurationSerializ
             public String toString() {
                     return new String("Cuboid: " + this.worldName + "," + this.x1 + "," + this.y1 + "," + this.z1 + "=>" + this.x2 + "," + this.y2 + "," + this.z2);
             }
-     
+
+            //Code de Karam
+            public List<Player> getPlayers() {
+                    List<Player> players = new ArrayList<Player>();
+                    for (Player player : Bukkit.getOnlinePlayers()) {
+                            if (this.contains(player.getLocation())) {
+                                    players.add(player);
+                            }
+                    }
+                    return players;
+            }
+
+            public List<Entity> getEntities() {
+                    List<Entity> entities = new ArrayList<Entity>();
+                    for (Entity entity : this.getWorld().getEntities()) {
+                            if (this.contains(entity.getLocation())) {
+                                    entities.add(entity);
+                            }
+                    }
+                    return entities;
+            }
+            //Fin du code de Karam
+
             public class CuboidIterator implements Iterator<Block> {
                     private World w;
                     private int baseX, baseY, baseZ;

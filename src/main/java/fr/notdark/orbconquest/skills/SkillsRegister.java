@@ -13,6 +13,7 @@ import fr.notdark.orbconquest.skills.elements.foudre.ThunderCharge;
 import fr.notdark.orbconquest.skills.elements.glace.CryoStasis;
 import fr.notdark.orbconquest.skills.elements.glace.IceAura;
 import fr.notdark.orbconquest.skills.elements.glace.SnowBall;
+import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -43,7 +44,7 @@ public class SkillsRegister {
 
         pm.registerEvents(new AerialSpeed(), main);
         pm.registerEvents(new Mist(main), main);
-        pm.registerEvents(new WindCutter(), main);
+        pm.registerEvents(new WindCutter(main), main);
 
     }
 

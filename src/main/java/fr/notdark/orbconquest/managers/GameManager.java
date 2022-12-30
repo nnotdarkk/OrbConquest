@@ -6,7 +6,7 @@ import fr.notdark.orbconquest.enums.GameStates;
 import fr.notdark.orbconquest.enums.GameTeams;
 import fr.notdark.orbconquest.tasks.GameStarting;
 import fr.notdark.orbconquest.tools.Title;
-import fr.notdark.orbconquest.ui.ChoiceUI;
+import fr.notdark.orbconquest.ui.*;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -25,6 +25,7 @@ public class GameManager {
     private static HashMap<Player, GameTeams> playerPreGameTeam = new HashMap<>();
     private static HashMap<Player, GameSelectMenu> playerSelectMenu = new HashMap<>();
     private static HashMap<Player, Integer> playerUsedPointsStart = new HashMap<>();
+    private static HashMap<Player, Integer> playerUsedElementsPointsStart = new HashMap<>();
 
     private int seconds;
     private int minutes;
@@ -39,6 +40,15 @@ public class GameManager {
     public void initPlayer(Player player){
         playerPreGameTeam.put(player, null);
         playerUsedPointsStart.put(player, 0);
+        playerUsedElementsPointsStart.put(player, 0);
+    }
+
+    public int getPlayerUsedElementsPointsStart(Player player){
+        return playerUsedElementsPointsStart.get(player);
+    }
+
+    public void addPlayerUsedElementsPointsStart(Player player, int points){
+        playerUsedElementsPointsStart.put(player, playerUsedElementsPointsStart.get(player) + points);
     }
 
     public void setPreGameTeam(Player player, GameTeams team){
@@ -140,6 +150,7 @@ public class GameManager {
         list.add("Choix des sorts");
         list.add("Choix des skills de classe");
         list.add("Choix des skills classiques");
+        list.add("Choix des sorts");
 
         return list;
     }
@@ -155,12 +166,12 @@ public class GameManager {
     }
 
     public Inventory getInventoryFromSelectMenu(Player player){
-        ChoiceUI choiceUI = new ChoiceUI(main);
-        if(playerSelectMenu.get(player) == GameSelectMenu.Classe) return choiceUI.getClasseUI();
-        if(playerSelectMenu.get(player) == GameSelectMenu.Statistiques) return choiceUI.getStatistiquesUI(player);
-        if(playerSelectMenu.get(player) == GameSelectMenu.Elements) return choiceUI.getElementsUI();
-        if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClasse) return choiceUI.getSkillsClasseUI();
-        if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClassiques) return choiceUI.getSkillsClassiquesUI();
+        if(playerSelectMenu.get(player) == GameSelectMenu.Classe) return new ClassChoiceUI(main).getInventory();
+        if(playerSelectMenu.get(player) == GameSelectMenu.Statistiques) return new StatistiquesChoiceUI(main).getInventory(player);
+        if(playerSelectMenu.get(player) == GameSelectMenu.Elements) return new ElementsChoiceUI(main).getInventory(player);
+        if(playerSelectMenu.get(player) == GameSelectMenu.Sorts) return new SortsChoiceUI(main).getInventory();
+        if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClasse) return new SkillsChoixUI(main).getInventory();
+        if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClassiques) return new ClassiquesChoixUI(main).getInventory();
         return null;
     }
     public void startGame(){

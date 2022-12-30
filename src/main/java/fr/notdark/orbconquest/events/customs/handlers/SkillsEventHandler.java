@@ -37,7 +37,7 @@ public class SkillsEventHandler extends Event implements Cancellable {
         return HANDLERS;
     }
 
-        @Override
+    @Override
     public boolean isCancelled() {
         return cancelled;
     }
