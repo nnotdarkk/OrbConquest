@@ -25,7 +25,7 @@ public class ElementsChoiceUI {
     public Inventory getInventory(Player player){
         Inventory inv = Bukkit.createInventory(null, 54, "Choix des éléments");
 
-        ItemStack vitre = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, (short) 5).setDisplayName(" ").build(false);
+        ItemStack vitre = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, (short) 10).setDisplayName(" ").build(false);
 
         UserManager userManager = new UserManager(main, player);
         String gameClasses = userManager.getClasse().toString().toLowerCase(Locale.ROOT);

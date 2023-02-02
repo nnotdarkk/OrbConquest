@@ -3,12 +3,15 @@ package fr.notdark.orbconquest.events;
 import fr.notdark.orbconquest.Main;
 import fr.notdark.orbconquest.config.user.UserManager;
 import fr.notdark.orbconquest.enums.GameClasses;
+import fr.notdark.orbconquest.enums.GameElements;
 import fr.notdark.orbconquest.enums.GameSelectMenu;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class ChoiceInventoryClick implements Listener {
@@ -142,10 +145,72 @@ public class ChoiceInventoryClick implements Listener {
         }
 
         if(e.getInventory().getTitle().equals("Choix des éléments")){
+            List<GameElements> elements = um.getElements();
             switch (e.getSlot()){
                 case 21:
-
+                    if(!elements.contains(GameElements.Feu)){
+                        elements.add(GameElements.Feu);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 23:
+                    if(!elements.contains(GameElements.Foudre)){
+                        elements.add(GameElements.Foudre);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 29:
+                    if(!elements.contains(GameElements.Glace)){
+                        elements.add(GameElements.Glace);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 30:
+                    if(!elements.contains(GameElements.Air)){
+                        elements.add(GameElements.Air);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 31:
+                    if(!elements.contains(GameElements.Poison)){
+                        elements.add(GameElements.Poison);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 32:
+                    if(!elements.contains(GameElements.Lumiere)){
+                        elements.add(GameElements.Lumiere);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
+                case 33:
+                    if(!elements.contains(GameElements.Invocation)){
+                        elements.add(GameElements.Invocation);
+                        um.setElements(elements);
+                        main.getGameManager().addPlayerUsedElementsPointsStart(player, 1);
+                        checkPointsElements(player);
+                    }
+                    break;
             }
+
+            player.closeInventory();
+            e.setCancelled(true);
+        }
+
+        if(e.getInventory().getTitle().equals("Choix des sorts")){
+
         }
     }
 

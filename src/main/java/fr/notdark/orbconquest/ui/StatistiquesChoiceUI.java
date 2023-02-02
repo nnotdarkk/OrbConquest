@@ -22,7 +22,7 @@ public class StatistiquesChoiceUI {
     public Inventory getInventory(Player player){
         Inventory inv = Bukkit.createInventory(null, 54, "Points de statistiques");
 
-        ItemStack vitre = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, (short) 3).setDisplayName(" ").build(false);
+        ItemStack vitre = new ItemBuilder(Material.STAINED_GLASS_PANE, 1, (short) 14).setDisplayName(" ").build(false);
 
         UserManager um = new UserManager(main, player);
 

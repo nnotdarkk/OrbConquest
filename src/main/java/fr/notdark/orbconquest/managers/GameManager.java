@@ -169,7 +169,7 @@ public class GameManager {
         if(playerSelectMenu.get(player) == GameSelectMenu.Classe) return new ClassChoiceUI(main).getInventory();
         if(playerSelectMenu.get(player) == GameSelectMenu.Statistiques) return new StatistiquesChoiceUI(main).getInventory(player);
         if(playerSelectMenu.get(player) == GameSelectMenu.Elements) return new ElementsChoiceUI(main).getInventory(player);
-        if(playerSelectMenu.get(player) == GameSelectMenu.Sorts) return new SortsChoiceUI(main).getInventory();
+        if(playerSelectMenu.get(player) == GameSelectMenu.Sorts) return new SortsChoiceUI(main).getInventory(player);
         if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClasse) return new SkillsChoixUI(main).getInventory();
         if(playerSelectMenu.get(player) == GameSelectMenu.SkillsClassiques) return new ClassiquesChoixUI(main).getInventory();
         return null;

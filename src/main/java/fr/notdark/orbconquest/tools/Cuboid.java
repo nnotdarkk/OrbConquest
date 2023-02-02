@@ -592,7 +592,8 @@ public class Cuboid implements Iterable<Block>, Cloneable, ConfigurationSerializ
                     return new String("Cuboid: " + this.worldName + "," + this.x1 + "," + this.y1 + "," + this.z1 + "=>" + this.x2 + "," + this.y2 + "," + this.z2);
             }
 
-            //Code de Karam
+            //Karam
+
             public List<Player> getPlayers() {
                     List<Player> players = new ArrayList<Player>();
                     for (Player player : Bukkit.getOnlinePlayers()) {
@@ -612,7 +613,8 @@ public class Cuboid implements Iterable<Block>, Cloneable, ConfigurationSerializ
                     }
                     return entities;
             }
-            //Fin du code de Karam
+
+            //end
 
             public class CuboidIterator implements Iterator<Block> {
                     private World w;

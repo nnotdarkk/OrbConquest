@@ -45,6 +45,7 @@ public class UserManager {
         f.set(player.getName() + ".team", null);
         f.set(player.getName() + ".classe", null);
         f.set(player.getName() + ".elements", new ArrayList<GameElements>());
+        f.set(player.getName() + ".sorts", new ArrayList<GameSorts>());
         f.set(player.getName() + ".str", 0);
         f.set(player.getName() + ".res", 0);
         f.set(player.getName() + ".agi", 0);
@@ -118,4 +119,25 @@ public class UserManager {
         f.save(fileManager.getFile("users"));
     }
 
+    public List<GameSorts> getStats() {
+        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("users"));
+        assert player != null;
+        List<GameSorts> sorts = new ArrayList<>();
+        for (String s : f.getStringList(player.getName() + ".sorts")) {
+            sorts.add(GameSorts.valueOf(s));
+        }
+        return sorts;
+    }
+
+    @SneakyThrows
+    public void setStats(List<GameSorts> sorts) {
+        YamlConfiguration f = YamlConfiguration.loadConfiguration(fileManager.getFile("users"));
+        assert player != null;
+        List<String> sortsString = new ArrayList<>();
+        for (GameSorts sort : sorts) {
+            sortsString.add(sort.toString());
+        }
+        f.set(player.getName() + ".sorts", sortsString);
+        f.save(fileManager.getFile("users"));
+    }
 }

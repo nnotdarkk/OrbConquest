@@ -1,6 +1,9 @@
 package fr.notdark.orbconquest.enums;
 
+import fr.notdark.orbconquest.tools.ItemBuilder;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,48 @@ public class EnumsManager {
         return null;
     }
 
+    public List<GameSorts> convertElementToSorts(GameElements elements){
+        List<GameSorts> sorts = new ArrayList<>();
+        if (elements.equals(GameElements.Feu)){
+            sorts.add(GameSorts.Fireball);
+            sorts.add(GameSorts.FlareAccel);
+            sorts.add(GameSorts.HellAura);
+        }
+        if (elements.equals(GameElements.Foudre)){
+            sorts.add(GameSorts.ParalyzeShot);
+            sorts.add(GameSorts.LightningBolt);
+            sorts.add(GameSorts.ThunderCharge);
+        }
+        if (elements.equals(GameElements.Glace)){
+            sorts.add(GameSorts.IceFreeze);
+            sorts.add(GameSorts.IceAura);
+            sorts.add(GameSorts.SnowBall);
+        }
+        if (elements.equals(GameElements.Air)){
+            sorts.add(GameSorts.AerialSpeed);
+            sorts.add(GameSorts.Mist);
+            sorts.add(GameSorts.WindCutter);
+        }
+        if (elements.equals(GameElements.Poison)){
+            sorts.add(GameSorts.PoisonSynthesis);
+            sorts.add(GameSorts.PouisonBall);
+            sorts.add(GameSorts.PoisonBreath);
+        }
+        if (elements.equals(GameElements.Lumiere)){
+            sorts.add(GameSorts.FlashBomb);
+            sorts.add(GameSorts.Heal);
+            sorts.add(GameSorts.HealingZone);
+        }
+        if (elements.equals(GameElements.Invocation)){
+            sorts.add(GameSorts.Zombie);
+            sorts.add(GameSorts.Skeleton);
+            sorts.add(GameSorts.IronGolem);
+            sorts.add(GameSorts.Horse);
+            sorts.add(GameSorts.Rabbit);
+            sorts.add(GameSorts.Sheep);
+        }
+        return sorts;
+    }
     public GameClasses convertSkilltoClasse(GameSkills skill){
         if(skill.equals(GameSkills.Slash) || skill.equals(GameSkills.FastStrike) || skill.equals(GameSkills.LastStanding) || skill.equals(GameSkills.LastWarrior) || skill.equals(GameSkills.Fortitude)) return GameClasses.Guerrier;
         if(skill.equals(GameSkills.CoverMoove) || skill.equals(GameSkills.Unbreakable) || skill.equals(GameSkills.AnchorHowl) || skill.equals(GameSkills.Repulser) || skill.equals(GameSkills.HolyProtection)) return GameClasses.Tank;
@@ -72,4 +117,28 @@ public class EnumsManager {
         if(mode.equals("Captains")) return GameCreationMode.Captains;
         return null;
     }
+
+    public ItemBuilder gameElementToItemStack(GameElements element, String sort, GameSorts sorts){
+        if(element.equals(GameElements.Feu)) return new ItemBuilder(Material.RED_ROSE).setDisplayName("§c§l"+sort);
+        if(element.equals(GameElements.Foudre)) return new ItemBuilder(Material.INK_SACK, 1, (short) 6).setDisplayName("§b§l"+sort);
+        if(element.equals(GameElements.Glace)) return new ItemBuilder(Material.PACKED_ICE).setDisplayName("§f§l"+sort);
+        if(element.equals(GameElements.Air)) return new ItemBuilder(Material.FEATHER).setDisplayName("§a§l"+sort);
+        if(element.equals(GameElements.Poison)) return new ItemBuilder(Material.INK_SACK, 1, (short) 13).setDisplayName("§5§l"+sort);
+        if(element.equals(GameElements.Lumiere)) return new ItemBuilder(Material.YELLOW_FLOWER).setDisplayName("§e§l"+sort);
+        if(element.equals(GameElements.Invocation)) return gameInvocationtoItemBuilder(sorts, sort);
+        return null;
+    }
+
+    public ItemBuilder gameInvocationtoItemBuilder(GameSorts sorts, String sort){
+        if(sorts.equals(GameSorts.Zombie)) return new ItemBuilder(Material.ROTTEN_FLESH).setDisplayName("§8§l"+sort);
+        if(sorts.equals(GameSorts.Skeleton)) return new ItemBuilder(Material.BONE).setDisplayName("§8§l"+sort);
+        if(sorts.equals(GameSorts.IronGolem)) return new ItemBuilder(Material.IRON_INGOT).setDisplayName("§8§l"+sort);
+        if(sorts.equals(GameSorts.Horse)) return new ItemBuilder(Material.SADDLE).setDisplayName("§8§l"+sort);
+        if(sorts.equals(GameSorts.Rabbit)) return new ItemBuilder(Material.RABBIT_FOOT).setDisplayName("§8§l"+sort);
+        if(sorts.equals(GameSorts.Sheep)) return new ItemBuilder(Material.WOOL).setDisplayName("§8§l"+sort);
+        return null;
+    }
+
+
+
 }
